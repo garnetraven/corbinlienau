@@ -44,7 +44,7 @@ class Vector {
     distance(v) {
         let dx = this.x - v.x;
         let dy = this.y - v.y;
-        return Math.sqrt((dx ** 2) - (dy ** 2));
+        return Math.sqrt((dx ** 2) + (dy ** 2));
     }
 
     static subtract(v1, v2) {

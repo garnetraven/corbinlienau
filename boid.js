@@ -10,7 +10,7 @@ class Boid {
         this.position = new Vector(x, y);
         this.velocity = Vector.random();
         this.acceleration = new Vector(0, 0);
-        this.maxForce = 0.2;
+        this.maxForce = 0.12;
         this.maxSpeed = 4;
         this.size = 6;
         this.alignmentRadius = 50;
@@ -72,7 +72,7 @@ class Boid {
         for (let other of boids) {
             let d = this.position.distance(other.position);
             if (other != this && d < this.alignmentRadius) {
-                steering.add(this.velocity);
+                steering.add(other.velocity);
                 total++;
             }
         }

@@ -6,14 +6,6 @@ const ctx = canvas.getContext('2d');
 canvas.width = 1200;
 canvas.height = 400;
 
-/*    update() {
-        if (this.position.x > canvas.width) this.position.x = 0;
-        if (this.position.x < 0) this.position.x = canvas.width;
-        if (this.position.y > canvas.height) this.position.y = 0;
-        if (this.position.y < 0) this.position.y = canvas.height;
-    }
-*/
-
 const flock = [];
 const numBoids = 100;
 
