@@ -188,3 +188,124 @@ footer p{
     display: flex;
     align-items: center;
 }
+
+.blog-card {
+    margin-bottom: 2em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.blog-card h2 {
+    font-size: 1.8em;
+    margin-bottom: 0.3em;
+}
+
+.blog-card h2 a {
+    color: #171717;
+    text-decoration: none;
+}
+
+.blog-card h2 a:hover {
+    color: #4361ee;
+}
+
+.blog-card .date {
+    font-size: 1em;
+    color: #666;
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+.blog-card p {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+.code-preview {
+    background-color: #f6f8fa;
+    border-radius: 0.3em;
+    padding: 1em;
+    margin-bottom: 1em;
+    overflow-x: auto;
+}
+
+.code-preview pre {
+    margin: 0;
+}
+
+.code-preview code {
+    font-family: "Consolas", "Monaco", "Andale Mono", "Ubuntu Mono", monospace;
+    font-size: 0.9em;
+    line-height: 1.4;
+    color: #24292e;
+}
+
+.blog-card-footer {
+    text-align: right;
+}
+
+.blog-card .read-more {
+    color: #4361ee;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.blog-card .read-more:hover {
+    text-decoration: underline;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2em;
+    margin-top: 2em;
+}
+
+.project-card {
+    background-color: #f6f8fa;
+    border-radius: 0.3em;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.project-card h2 {
+    font-size: 1.4em;
+    margin: 0.5em 0;
+    padding: 0 1em;
+}
+
+.project-card p {
+    font-size: 1em;
+    color: #666;
+    padding: 0 1em;
+    margin-bottom: 1em;
+}
+
+.project-links {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    background-color: #e1e4e8;
+}
+
+.project-links a {
+    text-decoration: none;
+    color: #0366d6;
+    font-weight: bold;
+}
+
+.project-links a:hover {
+    text-decoration: underline;
+}
