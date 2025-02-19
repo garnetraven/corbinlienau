@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="main.css">
+        <title>Neovim + Tmux: My Ubuntu Terminal Dev Environment</title>
+    </head>
+    <body>
+        <header>
+            <hgroup>
+                <h1><a href="/">Corbin Lienau</a></h1>
+                <h2>
+                    Software Engineer
+                    <br>
+                    Graduate Student, Georgia Institute of Technology
+                </h2>
+            </hgroup>
+        </header>
+        <nav>
+            <ul id="main-nav">
+                <li><a href="/projects.html">Projects</a></li>
+                <li><a href="/Corbin_Lienau_Resume.pdf" target="_blank">Resume</a></li>
+                <li><a href="/blog.html">Blog</a></li>
+            </ul>
+            <form action="//google.com/search" method="get">
+                <fieldset role="search">
+                    <input type="hidden" name="sitesearch" value="corbinlienau.dev">
+                    <input class="search" type="text" name="q" placeholder="Search">
+                </fieldset>
+            </form>
+        </nav>
+        <main>
+            <div class="content-wrapper">
+                <article>
+                    <header>
+                        <h1>Neovim + Tmux: My Ubuntu Terminal Dev Environment</h1>
+                        <p><em>Published on February 18, 2025</em></p>
+                    </header>
+                    <section class="blog-post-content">
+                        <p>Over the years, I've refined my terminal development environment to be as efficient and lightweight as possible. My current setup revolves around Neovim, Tmux, and Ubuntu. Here's a quick overview of how I configure my tools for maximum productivity:</p>
+
+                        <h2>Neovim Configuration</h2>
+                        <p>Neovim is my editor of choice due to its speed and extensibility. Below is a snippet of my configuration:</p>
+
+                        <div class="code-preview">
+                            <pre><code># Basic Neovim settings
+set number
+set relativenumber
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set smartindent
+set autoindent
+
+# Enable syntax highlighting
+syntax on
+filetype plugin indent on</code></pre>
+                        </div>
+
+                        <h2>Tmux for Multiplexing</h2>
+                        <p>Tmux allows me to manage multiple terminal sessions efficiently. I use a minimal configuration with custom keybindings to split panes and navigate between them seamlessly.</p>
+
+                        <div class="code-preview">
+                            <pre><code># Basic Tmux settings
+set -g mouse on
+unbind C-b
+set -g prefix C-a
+bind | split-window -h
+bind - split-window -v</code></pre>
+                        </div>
+
+                        <h2>Why This Setup?</h2>
+                        <p>This combination of tools provides a highly customizable and efficient workflow. Neovim's extensibility, combined with Tmux's session management, allows me to focus entirely on coding without distractions.</p>
+
+                        <p>If you're looking to streamline your terminal-based development workflow, I highly recommend giving this setup a try!</p>
+
+                        <footer class="blog-post-footer">
+                            <p><a href="/blog.html">&larr; Back to Blog</a></p>
+                        </footer>
+                    </section>
+                </article>
+
+                <!-- Sidebar -->
+                <aside>
+                    <section class="recent-updates">
+                        <h1>Recent Updates</h1>
+                        <ul>
+                            <li><a href="https://chromewebstore.google.com/" target="_blank">GuardFlow:</a> A Machine Learning Malicious Website Detector. <a href="https://chromewebstore.google.com/" target="_blank">Learn more about the chrome extension here.</a></li>
+                            <li>Neovim + Tmux: My WSL Terminal Dev Environment. <a href="/blog-post.html">Read more.</a></li>
+                            <li><a href="/">This website is live!</a> It was deployed on 02/18/2025.</li>
+                        </ul>
+                    </section>
+                </aside>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2025 <a href="/">Corbin Lienau</a>. All rights reserved.</p>
+        </footer>
+
+    </body>
+</html>
