@@ -10,11 +10,11 @@ class Boid {
         this.position = new Vector(x, y);
         this.velocity = Vector.random();
         this.acceleration = new Vector(0, 0);
-        this.maxForce = 0.12;
+        this.maxForce = 0.1;
         this.maxSpeed = 4;
         this.size = 6;
         this.alignmentRadius = 50;
-        this.cohesionRadius = 100;
+        this.cohesionRadius = 80;
         this.separationRadius = 50;
     }
 

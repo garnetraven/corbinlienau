@@ -20,8 +20,8 @@
         <nav>
             <ul id="main-nav">
                 <li><a href="/projects.html">Projects</a></li>
-                <li><a href="/Corbin_Lienau_Resume.pdf" target="_blank">Resume</a></li>
                 <li><a href="/blog.html">Blog</a></li>
+                <li><a href="/Corbin_Lienau_Resume.pdf" target="_blank">Resume</a></li>
             </ul>
             <form action="//google.com/search" method="get">
                 <fieldset role="search">
@@ -38,36 +38,78 @@
                         <p><em>Published on February 18, 2025</em></p>
                     </header>
                     <section class="blog-post-content">
-                        <p>Over the years, I've refined my terminal development environment to be as efficient and lightweight as possible. My current setup revolves around Neovim, Tmux, and Ubuntu. Here's a quick overview of how I configure my tools for maximum productivity:</p>
+                        <p>Over the last year, I've refined my terminal development environment to be as efficient and lightweight as possible. My current setup revolves around Neovim, Tmux, and Ubuntu. Here's a quick overview of how I configure my tools for maximum productivity:</p>
 
                         <h2>Neovim Configuration</h2>
                         <p>Neovim is my editor of choice due to its speed and extensibility. Below is a snippet of my configuration:</p>
 
                         <div class="code-preview">
-                            <pre><code># Basic Neovim settings
-set number
-set relativenumber
-set expandtab
-set tabstop=4
-set shiftwidth=4
-set smartindent
-set autoindent
+                            <pre><code>-- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
-# Enable syntax highlighting
-syntax on
-filetype plugin indent on</code></pre>
+-- Only required if you have packer configured as `opt`
+vim.cmd [[packadd packer.nvim]]
+
+return require('packer').startup(function(use)
+  -- Packer can manage itself
+  use 'wbthomason/packer.nvim'
+
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.8',
+-- or                            , branch = '0.1.x',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+
+  use({ 
+	"rose-pine/neovim", 
+	name = "rose-pine",
+	config = function()
+		vim.cmd("colorscheme rose-pine")
+	end
+  })
+  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+  use('nvim-treesitter/playground')
+  use('theprimeagen/harpoon')
+  use('mbbill/undotree')
+  use('tpope/vim-fugitive')
+
+  use {
+	'VonHeikemen/lsp-zero.nvim',
+	requires = {
+		-- LSP Support
+		{'neovim/nvim-lspconfig'},
+		{'williamboman/mason.nvim'},
+		{'williamboman/mason-lspconfig.nvim'},
+
+		-- Autocompletion
+		{'hrsh7th/nvim-cmp'},
+		{'hrsh7th/cmp-buffer'},
+		{'hrsh7th/cmp-path'},
+		{'saadparwaiz1/cmp_luasnip'},
+		{'hrsh7th/cmp-nvim-lsp'},
+		{'hrsh7th/cmp-nvim-lua'},
+
+		-- Snippets
+		{'L3MON4D3/LuaSnip'},
+		{'rafamadriz/friendly-snippets'},
+	}
+  }
+
+end)</code></pre>
                         </div>
 
                         <h2>Tmux for Multiplexing</h2>
                         <p>Tmux allows me to manage multiple terminal sessions efficiently. I use a minimal configuration with custom keybindings to split panes and navigate between them seamlessly.</p>
 
                         <div class="code-preview">
-                            <pre><code># Basic Tmux settings
-set -g mouse on
+                            <pre><code># vi mode
+set-window-option -g mode-keys vi
+set -g default-terminal "screen-256color"
+set -g default-shell "$SHELL"
+
+# remaps
 unbind C-b
-set -g prefix C-a
-bind | split-window -h
-bind - split-window -v</code></pre>
+set -g prefix C-s
+bind-key C-s send-prefix</code></pre>
                         </div>
 
                         <h2>Why This Setup?</h2>

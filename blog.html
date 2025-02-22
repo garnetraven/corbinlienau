@@ -38,18 +38,15 @@
                         <span class="date">February 18, 2025</span>
                         <p>Discover how I set up a powerful development environment using Neovim, Tmux, and Ubuntu. This combination offers a highly customizable and efficient workflow for coding projects.</p>
                         <div class="code-preview">
-                            <pre>
-                                <code>  
-# Neovim configuration snippet
-set number
-set relativenumber
-set expandtab
-set tabstop=4
-set shiftwidth=4
-set smartindent
-set autoindent
-                                </code>
-                            </pre>
+                            <pre><code># vi mode
+set-window-option -g mode-keys vi
+set -g default-terminal "screen-256color"
+set -g default-shell "$SHELL"
+
+# remaps
+unbind C-b
+set -g prefix C-s
+bind-key C-s send-prefix</code></pre>
                         </div>
                         <div class="blog-card-footer">
                             <a href="/blog-post.html" class="read-more">Read More</a>
